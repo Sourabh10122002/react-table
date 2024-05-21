@@ -1,0 +1,13 @@
+.show-entries {
+    display: flex;
+    gap: 0.8rem;
+    font-size: 12px;
+    font-weight: 500;
+    align-items: center;
+}
+
+.select-option-list {
+    padding: 4px;
+    background-color: #cacaca;
+    border-radius: 0.3rem;
+}

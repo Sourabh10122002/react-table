@@ -1,0 +1,17 @@
+.table-description {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17.07px;
+    padding: 16px;
+    align-items: center;
+    text-align: center;
+}
+
+.table-description>img {
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+.table-row-description:nth-child(2n+1) {
+    background-color: #F7F6FE;
+}
