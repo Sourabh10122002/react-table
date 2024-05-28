@@ -1,0 +1,64 @@
+.delete-popup-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 444px;
+    height: 294px;
+    border-radius: 12px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0px 0px 14px 1px #d2d2d2;
+}
+
+.delete-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cross {
+    cursor: pointer;
+}
+
+.cross:hover {
+    border: 1px solid black;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 1px #d2d2d2;
+}
+
+.delete-user {
+    padding: 0.8rem 0.8rem 0 0.8rem;
+}
+
+.delete-user>h4 {
+    margin-bottom: 0.3rem;
+}
+
+.buttons-delete-cancel {
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.buttons-delete-cancel>button {
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 14px 0;
+}
+
+.delete-done {
+    border: none;
+    background-color: #D92D20;
+    color: #fff;
+}
+
+.cancel-done {
+    background-color: #fff;
+    border: 1px solid #cfcfcf;
+    color: #000;
+}
