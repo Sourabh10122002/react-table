@@ -1,8 +1,10 @@
 import './App.css';
 import FormData from './Pages/Form/Form';
 import Home from './Pages/Home/Home';
-import { useState, useEffect } from "react";
+import { useState, useEffect, createContext } from "react";
 import { Routes, Route } from "react-router-dom";
+
+export const userContext = createContext();
 
 function App() {
   const [data, setData] = useState([]);
@@ -16,10 +18,12 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <Routes>
-        <Route path='/' element={<Home data={data} />} />
-        <Route path='/userid' element={<FormData data={data} setData={setData} />} />
-      </Routes>
+      <userContext.Provider value={{ data }}>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/userid' element={<FormData data={data} setData={setData} />} />
+        </Routes>
+      </userContext.Provider>
     </div>
   );
 }

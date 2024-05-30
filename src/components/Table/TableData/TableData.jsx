@@ -1,13 +1,17 @@
 import DeleteData from './DeleteData/DeleteData';
 import './TableData.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { userContext } from '../../../App'
 
-const TableData = ({ data }) => {
+const TableData = () => {
+    const { data } = useContext(userContext);
     const [show, setShow] = useState("none");
     const [num, setNum] = useState(null);
     const [tableData, setTableData] = useState(data);
     const navigate = useNavigate();
+
+    console.log(tableData)
 
     useEffect(() => {
         setTableData(data);
