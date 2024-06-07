@@ -8,17 +8,19 @@ export const userContext = createContext();
 
 function App() {
   const [data, setData] = useState([]);
+  const [uiData, setUIData] = useState([]);
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then((res) => res.json())
       .then((data) => {
         setData(data);
+        setUIData(data);
       })
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
   return (
     <div className="App">
-      <userContext.Provider value={{ data }}>
+      <userContext.Provider value={{ data, uiData, setData, setUIData }}>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/userid' element={<FormData data={data} setData={setData} />} />

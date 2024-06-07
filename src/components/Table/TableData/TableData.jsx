@@ -5,19 +5,15 @@ import { useNavigate } from 'react-router-dom';
 import { userContext } from '../../../App'
 
 const TableData = () => {
-    const { data } = useContext(userContext);
+    const { data, uiData } = useContext(userContext);
     const [show, setShow] = useState("none");
     const [num, setNum] = useState(null);
     const [tableData, setTableData] = useState(data);
     const navigate = useNavigate();
 
-    console.log(tableData)
-
     useEffect(() => {
         setTableData(data);
-
     }, [data]);
-
 
     function handleDelete(idx) {
         setNum(idx)
@@ -43,7 +39,7 @@ const TableData = () => {
         <>
             <tbody>
                 {
-                    tableData.map((list, idx) => {
+                    uiData.map((list, idx) => {
                         return (
                             <tr className='table-row-description' key={idx}>
                                 <td className='table-description'>
